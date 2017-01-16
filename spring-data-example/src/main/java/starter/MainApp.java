@@ -17,6 +17,10 @@ public class MainApp {
 		JdbcDaoImpl jdbcDaoImpl = ctx.getBean("jdbcDaoImpl",JdbcDaoImpl.class);
 		//Circle circle = jdbcDaoImpl.getCircle(1) ;
 		//System.out.println(circle.getName());
+		
+	//	Circle circle = new Circle(2,"Second Circle");
+	//	jdbcDaoImpl.insertCircle(circle);
+		
 		System.out.println(jdbcDaoImpl.getCircleCount());
 		System.out.println(jdbcDaoImpl.getCirclename(1));
 		System.out.println(jdbcDaoImpl.getCircleId(1));

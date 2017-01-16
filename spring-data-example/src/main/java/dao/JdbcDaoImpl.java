@@ -53,6 +53,17 @@ public class JdbcDaoImpl {
 		return jdbcTemplate.query(sql, new CircleMapper());
 	}
 	
+	public void insertCircle(Circle circle){
+		String sql = "INSERT INTO CIRCLE (ID,NAME) VALUES (?,?)";
+		jdbcTemplate.update(sql, new Object[]{circle.getId(),circle.getName()});
+		
+	}
+	
+	public void createTriangleTable(){
+		String sql = "CREATE TABLE TRIANGLE (ID INTEGER,NAME VARCHAR(50))";
+		jdbcTemplate.execute(sql);
+	}
+		
 	private static final class CircleMapper implements RowMapper<Circle>{
 
 		public Circle mapRow(ResultSet resultSet, int rowNum) throws SQLException {
